@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class API demo</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class API demo</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; API demo</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">10.695s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Making GET,POST,UPDATE and DELETE requests with authentication using RestAssured</td>
+<td class="success">10.695s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Request method:	POST
+Request URI:	https://restful-booker.herokuapp.com/booking
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=application/json
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;firstname&quot;: &quot;bhuvan&quot;,
+    &quot;additionalneeds&quot;: &quot;Breakfast&quot;,
+    &quot;bookingdates&quot;: {
+        &quot;checkin&quot;: &quot;2018-01-01&quot;,
+        &quot;checkout&quot;: &quot;2019-01-01&quot;
+    },
+    &quot;totalprice&quot;: 111,
+    &quot;depositpaid&quot;: true,
+    &quot;lastname&quot;: &quot;kohli&quot;
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 200
+Etag: W/&quot;c8-vbo1bbcDuBMXKeYChbfrcTEabmo&quot;
+Date: Fri, 04 Aug 2023 15:56:23 GMT
+Via: 1.1 vegur
+
+{
+    &quot;bookingid&quot;: 2758,
+    &quot;booking&quot;: {
+        &quot;firstname&quot;: &quot;bhuvan&quot;,
+        &quot;lastname&quot;: &quot;kohli&quot;,
+        &quot;totalprice&quot;: 111,
+        &quot;depositpaid&quot;: true,
+        &quot;bookingdates&quot;: {
+            &quot;checkin&quot;: &quot;2018-01-01&quot;,
+            &quot;checkout&quot;: &quot;2019-01-01&quot;
+        },
+        &quot;additionalneeds&quot;: &quot;Breakfast&quot;
+    }
+}
+Request method:	PATCH
+Request URI:	https://restful-booker.herokuapp.com/booking/2758
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	id=2758
+Headers:		Accept=application/json
+				Authorization=Basic YWRtaW46cGFzc3dvcmQxMjM=
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;firstname&quot;: &quot;changedName&quot;
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 176
+Etag: W/&quot;b0-SX474fU7QjfP/AfRs8Pa8vX4aLk&quot;
+Date: Fri, 04 Aug 2023 15:56:24 GMT
+Via: 1.1 vegur
+
+{
+    &quot;firstname&quot;: &quot;changedName&quot;,
+    &quot;lastname&quot;: &quot;kohli&quot;,
+    &quot;totalprice&quot;: 111,
+    &quot;depositpaid&quot;: true,
+    &quot;bookingdates&quot;: {
+        &quot;checkin&quot;: &quot;2018-01-01&quot;,
+        &quot;checkout&quot;: &quot;2019-01-01&quot;
+    },
+    &quot;additionalneeds&quot;: &quot;Breakfast&quot;
+}
+Request method:	PUT
+Request URI:	https://restful-booker.herokuapp.com/booking/2758
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	id=2758
+Headers:		Accept=application/json
+				Authorization=Basic YWRtaW46cGFzc3dvcmQxMjM=
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;firstname&quot;: &quot;changedName&quot;,
+    &quot;additionalneeds&quot;: &quot;Breakfast&quot;,
+    &quot;bookingdates&quot;: {
+        &quot;checkin&quot;: &quot;2018-01-01&quot;,
+        &quot;checkout&quot;: &quot;2019-01-01&quot;
+    },
+    &quot;totalprice&quot;: 222,
+    &quot;depositpaid&quot;: true,
+    &quot;lastname&quot;: &quot;changedLastName&quot;
+}
+HTTP/1.1 200 OK
+Server: Cowboy
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 186
+Etag: W/&quot;ba-q2vWPpqmiIrj6j3ga1Nj+5wZu78&quot;
+Date: Fri, 04 Aug 2023 15:56:26 GMT
+Via: 1.1 vegur
+
+{
+    &quot;firstname&quot;: &quot;changedName&quot;,
+    &quot;lastname&quot;: &quot;changedLastName&quot;,
+    &quot;totalprice&quot;: 222,
+    &quot;depositpaid&quot;: true,
+    &quot;bookingdates&quot;: {
+        &quot;checkin&quot;: &quot;2018-01-01&quot;,
+        &quot;checkout&quot;: &quot;2019-01-01&quot;
+    },
+    &quot;additionalneeds&quot;: &quot;Breakfast&quot;
+}
+Request method:	DELETE
+Request URI:	https://restful-booker.herokuapp.com/booking/2758
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	id=2758
+Headers:		Accept=application/json
+				Authorization=Basic YWRtaW46cGFzc3dvcmQxMjM=
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: text/plain; charset=utf-8
+Content-Length: 7
+Etag: W/&quot;7-rM9AyJuqT6iOan/xHh+AW+7K/T8&quot;
+Date: Fri, 04 Aug 2023 15:56:28 GMT
+Via: 1.1 vegur
+
+Created
+Request method:	GET
+Request URI:	https://restful-booker.herokuapp.com/booking/2758
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	id=2758
+Headers:		Accept=application/json
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+HTTP/1.1 404 Not Found
+Server: Cowboy
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: text/plain; charset=utf-8
+Content-Length: 9
+Etag: W/&quot;9-0gXL1ngzMqISxa6S1zx3F4wtLyg&quot;
+Date: Fri, 04 Aug 2023 15:56:29 GMT
+Via: 1.1 vegur
+
+Not Found
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[Test worker] INFO logger.Log - **********************POST REQUEST**********************
+[Test worker] INFO logger.Log - **********************PATCH REQUEST**********************
+[Test worker] INFO logger.Log - Authentication Token : eyJmaXJzdG5hbWUiOiJjaGFuZ2VkTmFtZSIsImFkZGl0aW9uYWxuZWVkcyI6IkJyZWFrZmFzdCIsImJvb2tpbmdkYXRlcyI6eyJjaGVja2luIjoiMjAxOC0wMS0wMSIsImNoZWNrb3V0IjoiMjAxOS0wMS0wMSJ9LCJ0b3RhbHByaWNlIjoyMjIsImRlcG9zaXRwYWlkIjp0cnVlLCJsYXN0bmFtZSI6ImNoYW5nZWRMYXN0TmFtZSJ9
+[Test worker] INFO logger.Log - **********************PUT REQUEST**********************
+[Test worker] INFO logger.Log - **********************DELETE REQUEST**********************
+[Test worker] INFO logger.Log - ****************VALIDATING DELETE USING GET REQUEST****************
+[Test worker] INFO logger.Log - REQUESTS VALIDATED SUCCESSFULLY!
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4</a> at Aug 4, 2023, 9:26:32 PM</p>
+</div>
+</div>
+</body>
+</html>
