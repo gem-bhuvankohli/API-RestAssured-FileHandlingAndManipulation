@@ -15,15 +15,17 @@ import java.util.Date;
 public class RestAssuredBookerApiImplementation {
     static String bookingID;
 
-    //  POST REQUEST
+    /*
+     * Create a booking on BookerApi using Post request.
+     * @return 200 Created Response.
+     */
     public static void post() {
         try {
 //          Fetching payload from data folder
             FileReader fileReader = new FileReader("src/test/resources/data/bookingDetails.json");
             int i;
             StringBuilder payload = new StringBuilder();
-            while ((i = fileReader.read()) != -1)
-                payload.append((char) i);
+            while ((i = fileReader.read()) != -1) payload.append((char) i);
             fileReader.close();
             Log.info("**********************POST REQUEST**********************");
             Response res = BookerRestUtils
@@ -40,7 +42,6 @@ public class RestAssuredBookerApiImplementation {
 //          Fetching Booking ID
             JsonPath jsonPath = new JsonPath(res.asString());
             bookingID = jsonPath.getString("bookingid");
-
             int statusCode = res.getStatusCode();
             Assert.assertEquals(200, statusCode);
         } catch (Exception e) {
@@ -48,7 +49,10 @@ public class RestAssuredBookerApiImplementation {
         }
     }
 
-    //  PATCH REQUEST
+    /*
+     * Updates booking details of the created booking using Patch request.
+     * @return updated details.
+     */
     public static void patch() {
         try {
 //      PATCH Payload
@@ -72,7 +76,10 @@ public class RestAssuredBookerApiImplementation {
         }
     }
 
-    //PUT REQUEST
+    /*
+     * Updates booking details of the created booking using Patch request.
+     * @return updated details.
+     */
     public static void put() {
         try {
 //      PUT Payload
@@ -90,7 +97,8 @@ public class RestAssuredBookerApiImplementation {
 //      Authenticating by successfully updating the payload using PUT method of RestAssured
             Log.info("Authentication Token : " + new String(Base64.getEncoder().encode(payload.toString().getBytes())));
             Log.info("**********************PUT REQUEST**********************");
-            Response res = BookerRestUtils.putResponse("/booking", payload.toString(), bookingID);
+            Response res = BookerRestUtils
+                    .putResponse("/booking", payload.toString(), bookingID);
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss");
             Date date = new Date();
 //          Writing data in putReq folder
@@ -98,7 +106,6 @@ public class RestAssuredBookerApiImplementation {
             FileWriter fileWriter = new FileWriter(putRes);
             fileWriter.write(res.asPrettyString());
             fileWriter.close();
-
 
             int statusCode = res.getStatusCode();
             Assert.assertEquals(200, statusCode);
@@ -108,12 +115,16 @@ public class RestAssuredBookerApiImplementation {
 
     }
 
-    //  DELETE REQUEST
+    /*
+     * deletes the created booking using Delete request of GoRestApi.
+     * @return successfully deletes the booking.
+     */
     public static void delete() {
         try {
 //      Authenticating by successfully updating the payload using DELETE method of RestAssured
             Log.info("**********************DELETE REQUEST**********************");
-            Response res = BookerRestUtils.deleteResponse("/booking", bookingID);
+            Response res = BookerRestUtils
+                    .deleteResponse("/booking", bookingID);
             int statusCode = res.getStatusCode();
             Assert.assertEquals(201, statusCode);
         } catch (Exception ex) {
@@ -122,7 +133,10 @@ public class RestAssuredBookerApiImplementation {
 
     }
 
-    //  VALIDATING DELETE USING GET REQUEST
+    /*
+     * verifies the delete request using Get request.
+     * @return status code 404, hence successfully deleted.
+     */
     public static void validateDelete() {
         try {
             Log.info("****************VALIDATING DELETE USING GET REQUEST****************");
@@ -139,5 +153,4 @@ public class RestAssuredBookerApiImplementation {
             e.printStackTrace();
         }
     }
-
 }
